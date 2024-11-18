@@ -40,8 +40,8 @@ const cocktails = [
 ];
 
 export default function App() {
-  const handleCocktailDetail = () => {
-    router.push("cocktails/1");
+  const handleCocktailDetail = (cocktailID: number) => {
+    router.push("cocktails/" + cocktailID);
   };
 
   const renderCocktail = ({ item }) => (
@@ -50,7 +50,10 @@ export default function App() {
       <View style={styles.info}>
         <Text style={styles.name}>{item.name}</Text>
         <Text style={styles.description}>{item.description}</Text>
-        <Button title="voir le cocktail" onPress={handleCocktailDetail} />
+        <Button
+          title="voir le cocktail"
+          onPress={() => handleCocktailDetail(item.id)}
+        />
       </View>
     </View>
   );
