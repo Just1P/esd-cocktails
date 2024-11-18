@@ -6,7 +6,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Simple Counter</Text>
+      <Text style={styles.title}>CocktailsCounter</Text>
       <Text style={styles.counter}>{count}</Text>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
