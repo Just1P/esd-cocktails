@@ -9,7 +9,7 @@ export default function Index() {
   };
 
   const handlePressList = () => {
-    router.push("list");
+    router.push("cocktails");
   };
 
   return (

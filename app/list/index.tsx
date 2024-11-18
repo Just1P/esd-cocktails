@@ -1,4 +1,5 @@
-import { StyleSheet, Text, View, FlatList, Image } from "react-native";
+import { router } from "expo-router";
+import { StyleSheet, Text, View, FlatList, Image, Button } from "react-native";
 
 const cocktails = [
   {
@@ -39,12 +40,17 @@ const cocktails = [
 ];
 
 export default function App() {
+  const handleCocktailDetail = () => {
+    router.push("cocktails/1");
+  };
+
   const renderCocktail = ({ item }) => (
     <View style={styles.card}>
       <Image source={{ uri: item.image }} style={styles.image} />
       <View style={styles.info}>
         <Text style={styles.name}>{item.name}</Text>
         <Text style={styles.description}>{item.description}</Text>
+        <Button title="voir le cocktail" onPress={handleCocktailDetail} />
       </View>
     </View>
   );
@@ -55,7 +61,7 @@ export default function App() {
       <FlatList
         data={cocktails}
         renderItem={renderCocktail}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item.id.toString()}
         contentContainerStyle={styles.list}
       />
     </View>
