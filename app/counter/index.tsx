@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { StyleSheet, Text, View, Button, TouchableOpacity } from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
 export default function App() {
   const [count, setCount] = useState(0);
@@ -26,12 +26,6 @@ export default function App() {
       <Text style={styles.counter}>{count}</Text>
       <View style={styles.buttonContainer}>
         <TouchableOpacity
-          style={[styles.button, styles.incrementButton]}
-          onPress={handleAddCocktail}
-        >
-          <Text style={styles.buttonText}>+ Incrémenter</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
           style={[styles.button, styles.decrementButton]}
           onPress={handleRemoveCocktail}
         >
@@ -42,6 +36,12 @@ export default function App() {
           onPress={handleresetCocktail}
         >
           <Text style={styles.buttonText}>Réinitialiser</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.button, styles.incrementButton]}
+          onPress={handleAddCocktail}
+        >
+          <Text style={styles.buttonText}>+ Incrémenter</Text>
         </TouchableOpacity>
       </View>
     </View>
