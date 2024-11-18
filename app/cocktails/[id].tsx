@@ -48,6 +48,7 @@ export default function CocktailDetailsScreen() {
     <View>
       <Text>Details du cocktail {id}</Text>
       <Text>{cocktail?.name}</Text>
+      <Text>{cocktail?.description}</Text>
     </View>
   );
 }
