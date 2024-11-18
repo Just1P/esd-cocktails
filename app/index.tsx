@@ -8,12 +8,17 @@ export default function Index() {
     router.push("counter");
   };
 
+  const handlePressList = () => {
+    router.push("list");
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.content}>
         <Text style={styles.title}>Bonjour je suis la page d'accueil</Text>
         <Text style={styles.subtitle}>Sous titre</Text>
-        <Button title="Voir tous les cocktails" onPress={handlePress}></Button>
+        <Button title="Le compteur de cocktails" onPress={handlePress}></Button>
+        <Button title="Liste des cocktails" onPress={handlePressList}></Button>
         <Text style={styles.description}>
           Un cocktail est une boisson mélangée composée d'au moins deux
           ingrédients, souvent alcoolisés, associés pour créer une saveur
