@@ -4,6 +4,22 @@ import { StyleSheet, Text, View, Button, TouchableOpacity } from "react-native";
 export default function App() {
   const [count, setCount] = useState(0);
 
+  const handleAddCocktail = () => {
+    const newCount = count + 1;
+    setCount(newCount);
+  };
+
+  const handleRemoveCocktail = () => {
+    const newCount = count - 1;
+    if (count > 0) {
+      setCount(newCount);
+    }
+  };
+
+  const handleresetCocktail = () => {
+    setCount(0);
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Simple Counter</Text>
@@ -11,19 +27,19 @@ export default function App() {
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={[styles.button, styles.incrementButton]}
-          onPress={() => setCount(count + 1)}
+          onPress={handleAddCocktail}
         >
           <Text style={styles.buttonText}>+ Incrémenter</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={[styles.button, styles.decrementButton]}
-          onPress={() => setCount(count - 1)}
+          onPress={handleRemoveCocktail}
         >
           <Text style={styles.buttonText}>- Décrémenter</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={[styles.button, styles.resetButton]}
-          onPress={() => setCount(0)}
+          onPress={handleresetCocktail}
         >
           <Text style={styles.buttonText}>Réinitialiser</Text>
         </TouchableOpacity>
